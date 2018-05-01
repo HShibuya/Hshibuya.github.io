@@ -4,19 +4,7 @@
     <meta charset="utf-8"/>
     <title>Catbus's Super Awesome Page</title>
     
-    <style media="screen" type="text/css">
-        html, body {
-            width:  100%;
-            margin: 0px;
-            background: linear-gradient(-90deg, red, orange, yellow,green,blue,indigo,violet);
-        }
-        h1{
-            font-family: impact;
-            -webkit-text-fill-color: linear-gradient(-90deg, red, orange, yellow,green,blue,indigo,violet)s;
-            -webkit-text-stroke: 1px black;
-            font-size: 48px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="main.css">
     
     <script type="text/javascript" src="js/paper-full.js"></script>
     <script type="text/paperscript" src="js/happyTurd.js" canvas="canvas1"></script>
@@ -26,22 +14,26 @@
     <h1>Catbus's Super Awesome Page</h1><br/>
     <h2>Doodler</h2>
     <img id="spbob" src="images/spbob.png"/>
-    <canvas id="canvas" width="1000" height="600"></canvas>
+    <img id="init" src="images/drawinit.png"/>
+    <canvas id="canvas" width="1024" height="576"></canvas>
     <br />
-    <input type="color" id="color" onchange="changeColor()"/>
-    <input type="button" id="size" value="Change Size" onclick="changeSize()"/>
-    <select id="brush" onchange="changeBrush()">
-        <option value="square">Square</option>
-        <option value="circle">Circle</option>
-        <option value="slinky">Slinky</option>
-        <option value="SpongeBob">SpongeBob</option>
-        <option value="eraser">Eraser</option>
-    </select>
-    <input type="button" value="Save Image" onclick="saveImage()"/>
-    <input type="button" value="Clear" onclick="clearScreen()"/>
+    Primary: <input type="color" class="color" id="color1" onchange="changeColor1()"/>
+    Secondary: <input type="color" class="color" id="color2" onchange="changeColor2()"/>
+    <input type="button" id="size" class="button" value="Change Size" onclick="changeSize()"/>
+    <span class='select'>
+        <select id="brush"onchange="changeBrush()">
+            <option value="square">Square</option>
+            <option value="circle">Circle</option>
+            <option value="SpongeBob">SpongeBob</option>
+            <option value="eraser">Eraser</option>
+        </select>
+    </span>
+    <input type="button" class="button" value="Download Image" onclick="downloadImage()"/>
+    <input type="button" class="button send" value="Send Image" onclick="sendImage()"/>
+    <input type="button" class="button" value="Clear" onclick="clearScreen()"/>
     
     
-    <script type="text/javascript" src="canvas.js">
+    <script type="text/javascript" src="js/canvas.js">
     </script>
     
     <br />
