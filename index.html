@@ -11,27 +11,65 @@
 </head>
 
 <body>
-    <h1>Catbus's Super Awesome Page</h1><br/>
-    <h2>Doodler</h2>
-    <img id="spbob" src="images/spbob.png"/>
+    <div id='header'>
+        <h1>Catbus's Super Awesome Page</h1><br/>
+        
+    </div>
+    
+    <h2>Doodler:</h2> Draw to your heart's content!
+    <img id="turd" src="images/turd.png"/>
     <img id="init" src="images/drawinit.png"/>
-    <canvas id="canvas" width="1024" height="576"></canvas>
+    <div style="position:relative;width:1024px;height:576px;">
+        <canvas id="canvas" width="1024" height="576" style="position: absolute; left:0;top:0; z-index:0;"></canvas>
+        <canvas id="cursor" width="1024" height="576" style="position: absolute; left:0;top:0; z-index:1;"></canvas>
+    </div>
     <br />
-    Primary: <input type="color" class="color" id="color1" onchange="changeColor1()"/>
-    Secondary: <input type="color" class="color" id="color2" onchange="changeColor2()"/>
+    Primary: <input type="color" id="color1" onchange="changeColor1()"/>
+    Secondary: <input type="color"  id="color2" onchange="changeColor2()"/>
     <input type="button" id="size" class="button" value="Change Size" onclick="changeSize()"/>
     <span class='select'>
         <select id="brush"onchange="changeBrush()">
             <option value="square">Square</option>
             <option value="circle">Circle</option>
-            <option value="SpongeBob">SpongeBob</option>
+            <option value="turd">Emoji</option>
             <option value="eraser">Eraser</option>
         </select>
     </span>
     <input type="button" class="button" value="Download Image" onclick="downloadImage()"/>
     <input type="button" class="button send" value="Send Image" onclick="sendImage()"/>
-    <input type="button" class="button" value="Clear" onclick="clearScreen()"/>
+    <input type="button" class="button" value="Clear" onclick="clearScreen(context)"/>
     
+    
+    <!-- Modal-->
+    <div id="sendForm">
+        <form id="formContent">
+            <span id="close" class="close" onclick="document.getElementById('sendForm').style.display='none'">&times;</span>
+            <div class="imgcontainer">
+                <h3>Your Masterpiece</h3>
+                <img id='saveImage' alt="Here's your picture!" class="saveImage"/>
+            </div>
+            <div class="container">
+                <label for="name"><b>Name</b></label>
+                <br/>
+                <input class="inputText" type="text" placeholder="The name of the artist (or secret identity)" name="name">
+                <br/>
+                
+                <label for="title"><b>Title</b></label>
+                <br/>
+                <input class="inputText" type="text" placeholder="What's the title of this work of art?" name="title">
+                <br/>
+                
+                <label for="description"><b>Description</b></label>
+                <br/>
+                <textarea class="inputText desc" placeholder="Tell me about your masterpiece!" name="description"></textarea>
+                <br/>
+                
+                <button class='submit' type='submit'>
+                    <b>SEND!!</b>
+                </button>
+            </div>
+        </form>
+    </div>
     
     <script type="text/javascript" src="js/canvas.js">
     </script>

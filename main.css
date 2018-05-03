@@ -9,8 +9,21 @@ html{
 body{
     font-family: arb;
 }
-canvas{
+h2{
+    display:inline-block;
+    text-emphasis-color: linear-gradient(-90deg, red, orange, yellow,green,blue,indigo,violet,red);
+}
+#canvas{
     background-color: white;
+    border-style: inset;
+    border-color: chocolate;
+    border-width:7px;
+}
+#cursor{
+    background: transparent;
+    border-style:inset;
+    border-color: chocolate;
+    border-width: 7px;
 }
 .button{
     background-image: linear-gradient(white 0%,lightgrey 51%,white 100%); /* Green */
@@ -26,7 +39,7 @@ canvas{
     font-size: 16px;
     margin-top: 5px;
 }
-.color{
+input[type='color']{
     background-image: linear-gradient(white 0%,lightgrey 51%,white 100%);
     border: none;
     padding: 4px 10px;
@@ -57,6 +70,87 @@ canvas{
     color: white;
 }
 .button:hover{
+    background-position: center bottom;
+}
+#sendForm{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+#formContent{
+    position: relative;
+    background-color: azure;
+    margin: 10% auto 10% auto;
+    width: 80%;
+    border: 1px solid #888;
+}
+.close{
+    display:block;
+    position: absolute;
+    margin-right:3%;
+    margin-left:93%;
+    margin-top: 3%;
+    font-size: 30px;
+}
+.close:hover{
+    color:grey;
+}
+.saveImage{
+    position: relative;
+    margin: 10px 20% 20px 20%;
+    width:60%;
+    background-color: white;
+    border-color:chocolate;
+    border-style: groove;
+    border-width: 5px;
+}
+h3{
+    position: relative;
+    text-align: center;
+    font-size:24px;
+    margin: 50px auto 10px auto;
+    color: gold;
+}
+.container{
+    position: relative;
+    margin: 20px auto;
+    width:80%;
+}
+.inputText{
+    width:90%;
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    font-size: 16px;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color:grey;
+}
+.desc{
+    height: 150px;
+    resize: none;
+    border-style: inset;
+}
+.submit{
+    display: block;
+    position: relative;
+    margin: 10px auto;
+    width:200px;
+    height:50px;
+    background-image: linear-gradient(#9fff80 0%,#79ff4d 51%,#9fff80 100%);
+    background-size: 200% auto;
+    transition: 0.2s;
+    color: white;
+    border-radius: 10px;
+    font-size: 24px;
+}
+.submit:hover{
     background-position: center bottom;
 }
 h1{

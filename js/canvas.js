@@ -1,42 +1,50 @@
 var canvas = document.getElementById("canvas");
+var canvasCursor = document.getElementById("cursor");
 var context = canvas.getContext("2d");
+var contextCursor = canvasCursor.getContext("2d");
 var drawing = false;
 var color1 = "black";
 var color2 = "black";
 var size = 10;
 var brush = "square";
 var firstClick = false;
-var img = document.getElementById("spbob");
+var img = document.getElementById("turd");
 var initImg = document.getElementById("init");
 img.style.display="none";
 initImg.style.display="none";
 
-context.drawImage(initImg, 0, 0, canvas.width, canvas.height);
+contextCursor.drawImage(initImg, 0, 0, canvasCursor.width, canvasCursor.height);
 context.fillStyle = "black";
 context.strokeStyle = "black";
+contextCursor.fillStyle = "black";
+contextCursor.strokeStyle = "black";
 
 canvas.addEventListener("mousemove", mouseMove);
 canvas.addEventListener("mousedown", mouseDown);
 canvas.addEventListener("mouseup", mouseUp);
+canvasCursor.addEventListener("mousemove", mouseMove);
+canvasCursor.addEventListener("mousedown", mouseDown);
+canvasCursor.addEventListener("mouseup", mouseUp);
+
 
 function mouseMove(event){
+    clearScreen(contextCursor)
     if(drawing==true){
-        draw(event);
+        draw(context,event);
     }
-    if(firstClick==false){
-        firstClick=true;
-        clearScreen();
-    }
+    draw(contextCursor,event)
 }
 
 function changeColor1(){
     color1 = document.getElementById("color1").value;
     context.fillStyle=color1;
+    contextCursor.fillStyle=color1;
 }
 
 function changeColor2(){
     color2 = document.getElementById("color2").value;
     context.strokeStyle=color2;
+    contextCursor.strokeStyle=color2;
 }
 
 function changeSize(){
@@ -55,32 +63,30 @@ function mouseUp(event){
     drawing = false;
 }
 
-function draw(event){
-    var x = event.pageX-canvas.offsetLeft;
-    var y = event.pageY-canvas.offsetTop;
+function draw(ctx, event){
+    var x = event.layerX-canvas.offsetLeft-7;
+    var y = event.layerY-canvas.offsetTop-7;
     if(brush=="square"){
-        context.strokeStyle=color2;
-        context.fillRect(x-size/2, y-size/2, size, size)
-        context.strokeRect(x-size/2, y-size/2, size, size)
+        ctx.fillRect(x-size/2, y-size/2, size, size)
+        ctx.strokeRect(x-size/2, y-size/2, size, size)
     }
     else if(brush=="circle"){
-        context.strokeStyle=color2;
-        context.beginPath();
-        context.arc(x, y, size, 0, 2*Math.PI, false);
-        context.fill();
-        context.stroke();
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, 2*Math.PI, false);
+        ctx.fill();
+        ctx.stroke();
     }
     else if(brush=="eraser"){
-        context.clearRect(x-size/2,y-size/2, size, size);
+        ctx.clearRect(x-size/2,y-size/2, size, size);
     }
     else{
-        context.drawImage(img, x-size/2, y-size/2, size, size*(393/470));
+        ctx.drawImage(img, x-size/2, y-size/2, size, size*(393/470));
     }
 }
 
 function mouseDown(event){
     drawing = true;
-    draw(event);
+    draw(context,event);
 }
 
 function downloadImage(){
@@ -96,7 +102,18 @@ function downloadImage(){
     document.body.removeChild(element);
 }
 
-function clearScreen(){
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    
+function clearScreen(ctx){
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+}
+
+
+var form = document.getElementById("sendForm");
+
+var close = document.getElementById("close")
+
+function sendImage(){
+    form.style.display = "block";
+    var imageURL = canvas.toDataURL();
+    var saveImage = document.getElementById("saveImage");
+    saveImage.setAttribute("src",imageURL);
 }
