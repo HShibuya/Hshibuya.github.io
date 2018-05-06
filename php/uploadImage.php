@@ -1,5 +1,13 @@
 <?php
 echo "here <br/>";
+
+function debug($data){
+	$print = $data;
+	echo "<script>console.log('$print')<\script>";
+}
+
+debug('start');
+
 $img_dir = '/storage/ssd1/622/3110622/public_html/paintings';
 //$img_dir = '/Users/HirokiShibuya/Sites/Personal Webpage/paintings';
 $file_count = 0;
@@ -33,6 +41,7 @@ if(isset($_POST['description'])){
 else{
 	$desc = 'no description';
 }
+$date = date(Y-m-d H:i:s);
 
 $imgData = substr($imgData,strpos($imgData,",")+1);
 $imgData = str_replace(' ', '+', $imgData);
