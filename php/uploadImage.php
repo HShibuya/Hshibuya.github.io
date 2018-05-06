@@ -8,15 +8,10 @@ if($paintings){
 	$file_count = count($paintings);
 }
 
-$added = print_r($_POST);
-echo "$added <br/>";
 $imgData = $_POST['imageurl'];
-echo "$imgData <br/>";
 $imgData = substr($imgData,strpos($imgData,",")+1);
 $imgData = str_replace(' ', '+', $imgData);
-echo "pre ".$imgData." <br/>";
 $img = base64_decode($imgData);
-echo "final ".$img." <br/>";
 
 $filename = $img_dir.'/'.$file_count.'.png';
 echo chmod($img_dir,0755);
