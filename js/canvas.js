@@ -1,3 +1,5 @@
+var v = 3;
+
 var canvas = document.getElementById("canvas");
 var canvasCursor = document.getElementById("cursor");
 var context = canvas.getContext("2d");
@@ -12,6 +14,9 @@ var img = document.getElementById("turd");
 var initImg = document.getElementById("init");
 img.style.display="none";
 initImg.style.display="none";
+var background = new Image(1024,576);
+background.src = 'images/canvasBack.png';
+
 
 contextCursor.drawImage(initImg, 0, 0, canvasCursor.width, canvasCursor.height);
 context.fillStyle = "black";
@@ -32,7 +37,7 @@ function mouseMove(event){
     if(drawing==true){
         draw(context,event);
     }
-    draw(contextCursor,event)
+    draw(contextCursor,event);
 }
 
 function changeColor1(){
@@ -55,6 +60,12 @@ function changeSize(){
     }
 }
 
+function changeWidth(){
+    var newWidth = prompt("What is your new size");
+    context.lineWidth = parseInt(newWidth);
+    contextCursor.lineWidth = parseInt(newWidth);
+}
+
 function changeBrush(){
     brush = document.getElementById("brush").value;
 }
@@ -72,16 +83,27 @@ function draw(ctx, event){
     }
     else if(brush=="circle"){
         ctx.beginPath();
-        ctx.arc(x, y, size, 0, 2*Math.PI, false);
+        ctx.arc(x, y, size/2, 0, 2*Math.PI, false);
         ctx.fill();
         ctx.stroke();
     }
     else if(brush=="eraser"){
-        ctx.clearRect(x-size/2,y-size/2, size, size);
+        if(drawing){
+            ctx.clearRect(x-size/2,y-size/2, size, size);
+        }
+        else{
+            drawBack(event);
+        }
     }
     else{
         ctx.drawImage(img, x-size/2, y-size/2, size, size*(393/470));
     }
+}
+
+function drawBack(event){
+    var x = event.layerX-canvas.offsetLeft-7;
+    var y = event.layerY-canvas.offsetTop-7;
+    contextCursor.drawImage(background, x-size/2,y-size/2,size,size,x-size/2,y-size/2,size,size);
 }
 
 function mouseDown(event){
@@ -92,14 +114,16 @@ function mouseDown(event){
 function downloadImage(){
     var image = canvas.toDataURL();
     var element = document.createElement('a');
+	var text = document.createTextNode('boo');
+	element.appendChild(text);
     element.setAttribute('href', image);
     element.setAttribute('download', 'image.png');
-    element.style.display = 'none';
+    //element.style.display = 'none';
     document.body.appendChild(element);
 
     element.click();
 
-    document.body.removeChild(element);
+    //document.body.removeChild(element);
 }
 
 function clearScreen(ctx){
@@ -107,13 +131,20 @@ function clearScreen(ctx){
 }
 
 
+/* Modal Form JS */
+
 var form = document.getElementById("sendForm");
 
 var close = document.getElementById("close")
 
 function sendImage(){
+    /* To visualize painting in the form */
     form.style.display = "block";
     var imageURL = canvas.toDataURL();
     var saveImage = document.getElementById("saveImage");
     saveImage.setAttribute("src",imageURL);
+    
+    /*Store painting in input for ph*/
+	var uploadedImage = document.getElementById('imageurl');
+    uploadedImage.setAttribute('value', imageURL);
 }

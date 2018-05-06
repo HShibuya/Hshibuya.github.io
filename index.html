@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <meta charset="utf-8"/>
     <title>Catbus's Super Awesome Page</title>
     
@@ -24,11 +26,12 @@
         <canvas id="cursor" width="1024" height="576" style="position: absolute; left:0;top:0; z-index:1;"></canvas>
     </div>
     <br />
-    Primary: <input type="color" id="color1" onchange="changeColor1()"/>
-    Secondary: <input type="color"  id="color2" onchange="changeColor2()"/>
+    Primary: <input type="color" id="color1" class='button' onchange="changeColor1()"/>
+    Secondary: <input type="color"  id="color2" class='button' onchange="changeColor2()"/>
     <input type="button" id="size" class="button" value="Change Size" onclick="changeSize()"/>
-    <span class='select'>
-        <select id="brush"onchange="changeBrush()">
+    <input type="button" id="width" class="button" value="Change Thickness" onclick="changeWidth()"/>
+    <span id='select' class='button'>
+        <select id="brush" onchange="changeBrush()">
             <option value="square">Square</option>
             <option value="circle">Circle</option>
             <option value="turd">Emoji</option>
@@ -42,16 +45,21 @@
     
     <!-- Modal-->
     <div id="sendForm">
-        <form id="formContent">
+        <form id="uploadImage" method='post' action='php/uploadImage.php'>
             <span id="close" class="close" onclick="document.getElementById('sendForm').style.display='none'">&times;</span>
             <div class="imgcontainer">
                 <h3>Your Masterpiece</h3>
                 <img id='saveImage' alt="Here's your picture!" class="saveImage"/>
             </div>
-            <div class="container">
-                <label for="name"><b>Name</b></label>
+            <div id='inputContainer' class="container">
+                <label for="name"><b>Public Name</b></label>
                 <br/>
-                <input class="inputText" type="text" placeholder="The name of the artist (or secret identity)" name="name">
+                <input class="inputText" type="text" placeholder="Your public identity (the name that everyone will see)" name="name">
+                <br/>
+                
+                <label form="secret"><b>Secret Name</b></label>
+                <br/>
+                <input class="inputText" type="text" placeholder="Your secret identity (the name only I will see)" name="secret">
                 <br/>
                 
                 <label for="title"><b>Title</b></label>
@@ -63,20 +71,25 @@
                 <br/>
                 <textarea class="inputText desc" placeholder="Tell me about your masterpiece!" name="description"></textarea>
                 <br/>
+				
+				<input id='imageurl' type='url' name='imageurl' hidden='true'>
                 
-                <button class='submit' type='submit'>
-                    <b>SEND!!</b>
-                </button>
+                <div id='formButtons'>
+                    <button id='submit' class='formbutton button' type='submit'>SEND!!</button>
+                    <input id='cancel' type='button' class='formbutton button' value="Cancel" onclick="document.getElementById('sendForm').style.display='none'">
+                </div>
+                
             </div>
         </form>
     </div>
     
-    <script type="text/javascript" src="js/canvas.js">
+    <script type="text/javascript" src="js/canvas.js?v=3">
     </script>
     
     <br />
     
-    <h2>Happy Turd</h2>
+    <h2>Happy Turd</h2><br/>
     <canvas id="canvas1" width="500" height="700"></canvas>
+    
 </body>
 </html>

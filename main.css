@@ -1,6 +1,6 @@
 html{
     width:  100%;
-    background: linear-gradient(-90deg, red, orange, yellow,green,blue,indigo,violet,red);
+    background: linear-gradient(-90deg, rgba(255,0,0,0.5), rgba(255,127,0,0.5), rgba(255,255,0,0.5),rgba(0,255,0,0.5),rgba(0,255,255,0.5),rgba(0,127,255,0.5),rgba(0,0,255,0.5),rgba(255,0,255,0.5),rgba(255,0,127,0.5));
 }
 @font-face{
 	font-family: arb;
@@ -14,7 +14,7 @@ h2{
     text-emphasis-color: linear-gradient(-90deg, red, orange, yellow,green,blue,indigo,violet,red);
 }
 #canvas{
-    background-color: white;
+    background-image: url('images/canvasBack.png');
     border-style: inset;
     border-color: chocolate;
     border-width:7px;
@@ -38,12 +38,10 @@ h2{
     display: inline-block;
     font-size: 16px;
     margin-top: 5px;
+    cursor:pointer;
 }
 input[type='color']{
-    background-image: linear-gradient(white 0%,lightgrey 51%,white 100%);
-    border: none;
     padding: 4px 10px;
-    border-radius: 20px;
     width:50px;
     height:30px;
     margin-top:5px;
@@ -51,7 +49,11 @@ input[type='color']{
     margin-right:5px;
     
 }
-.select{
+input[type='color']:hover{
+    transition: 0.4s;
+    background-position: bottom;
+}
+#select{
     background-image: linear-gradient(white 0%,lightgrey 51%,white 100%);
     background-size: 200% auto;
     border-radius: 20px;
@@ -60,10 +62,16 @@ input[type='color']{
     margin-left: 2px;
     margin-right: 5px;
 }
-.select select{
+#select select{
     background: transparent;
+    padding: 8px 8px;
     border: none;
     font-size: 16px;
+    cursor:pointer;
+}
+#select:hover{
+    background-position: bottom;
+    transition: 0.4s;
 }
 .send{
     background-image: linear-gradient(limegreen 0%,forestgreen 51%,limegreen 100%);
@@ -71,6 +79,7 @@ input[type='color']{
 }
 .button:hover{
     background-position: center bottom;
+    transition: 0.4s;
 }
 #sendForm{
     display: none;
@@ -83,27 +92,28 @@ input[type='color']{
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
 }
-#formContent{
+#uploadImage{
     position: relative;
     background-color: azure;
     margin: 10% auto 10% auto;
     width: 80%;
     border: 1px solid #888;
+    border-radius:25px;
 }
 .close{
     display:block;
     position: absolute;
     margin-right:3%;
-    margin-left:93%;
-    margin-top: 3%;
+    margin-left:94%;
     font-size: 30px;
+    cursor:pointer;
 }
 .close:hover{
     color:grey;
 }
 .saveImage{
-    position: relative;
-    margin: 10px 20% 20px 20%;
+    display:block;
+    margin: 10px auto 20px auto;
     width:60%;
     background-color: white;
     border-color:chocolate;
@@ -123,35 +133,42 @@ h3{
     width:80%;
 }
 .inputText{
-    width:90%;
-    display: inline-block;
+    display: flex;
+    width:100%;
     padding: 12px 20px;
-    margin: 8px 0px;
+    margin: 8px auto;
     font-size: 16px;
     border-width: 3px;
     border-radius: 5px;
     border-color:grey;
+    box-sizing:border-box;
 }
 .desc{
     height: 150px;
     resize: none;
     border-style: inset;
 }
-.submit{
-    display: block;
+#formButtons{
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.formbutton{
+    display: inline-block;
     position: relative;
     margin: 10px auto;
     width:200px;
     height:50px;
-    background-image: linear-gradient(#9fff80 0%,#79ff4d 51%,#9fff80 100%);
-    background-size: 200% auto;
-    transition: 0.2s;
     color: white;
     border-radius: 10px;
-    font-size: 24px;
+    font-size:24px;
+    font-weight: bold;
 }
-.submit:hover{
-    background-position: center bottom;
+#cancel{
+    background-image: linear-gradient(#ff9090 0%,#ff6070 51%,#ff9090 100%);
+}
+#submit{
+    background-image: linear-gradient(#9fff80 0%,#79ff4d 51%,#9fff80 100%);
 }
 h1{
     font-family: impact;
