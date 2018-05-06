@@ -41,7 +41,7 @@ if(isset($_POST['description'])){
 else{
 	$desc = 'no description';
 }
-$date = date(Y-m-d H:i:s);
+$date = date('Y-m-d H:i:s');
 
 $imgData = substr($imgData,strpos($imgData,",")+1);
 $imgData = str_replace(' ', '+', $imgData);
