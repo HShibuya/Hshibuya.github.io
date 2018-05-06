@@ -33,7 +33,7 @@ if(isset($_POST['desc'])){
 else{
 	$desc = 'no description';
 }
-$date = G
+$date = G;
 
 $imgData = substr($imgData,strpos($imgData,",")+1);
 $imgData = str_replace(' ', '+', $imgData);
