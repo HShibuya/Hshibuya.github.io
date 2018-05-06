@@ -2,7 +2,7 @@
 echo "here <br/>";
 $img_dir = '/storage/ssd1/622/3110622/public_html/paint_queue';
 $file_count = 0;
-$paintings = glob($img_dir.'*');
+$paintings = glob($img_dir.'/*');
 echo "$file_count <br/>";
 if($paintings){
 	$file_count = count($paintings);
