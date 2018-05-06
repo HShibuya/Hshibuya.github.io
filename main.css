@@ -131,6 +131,7 @@ h3{
     position: relative;
     margin: 20px auto;
     width:80%;
+	text-align: center;
 }
 .inputText{
     display: flex;

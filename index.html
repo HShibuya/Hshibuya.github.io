@@ -17,11 +17,10 @@
 				e.preventDefault();
 				var values = $(this).serialize();
 				
-				console.log(values);
-				
 				var ajax = new XMLHttpRequest();
 				ajax.onreadystatechange = function(){
-					document.getElementById('uploadImage').innerHTML = this.responseText;
+					document.getElementById('inputContainer').innerHTML = "Sent!";
+						console.log(this.responseText);
 				}
 				ajax.open('POST','php/uploadImage.php',true);
 				ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
