@@ -6,8 +6,6 @@ function debug($data){
 	echo "<script>console.log('$print')<\script>";
 }
 
-debug('start');
-
 $img_dir = '/storage/ssd1/622/3110622/public_html/paintings';
 //$img_dir = '/Users/HirokiShibuya/Sites/Personal Webpage/paintings';
 $file_count = 0;
@@ -47,7 +45,10 @@ $imgData = substr($imgData,strpos($imgData,",")+1);
 $imgData = str_replace(' ', '+', $imgData);
 $img = base64_decode($imgData);
 
-$fileData = $file_count.$date.$name.$secret.$title;
+$fileData = $file_count+$date+$name+$secret+$title;
+
+echo fileData."<br/>";
+
 $fileHash = hash('sha256', fileData);
 $filename = $img_dir.'/'.$fileHash.'.png';
 echo chmod($img_dir,0755);
