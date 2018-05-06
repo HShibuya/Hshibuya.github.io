@@ -10,6 +10,26 @@
     
     <script type="text/javascript" src="js/paper-full.js"></script>
     <script type="text/paperscript" src="js/happyTurd.js" canvas="canvas1"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			$('#uploadImage').on('submit', function(e) {
+				e.preventDefault();
+				var values = $(this).serialize();
+				
+				console.log(values);
+				
+				var ajax = new XMLHttpRequest();
+				ajax.onreadystatechange = function(){
+					document.getElementById('uploadImage').innerHTML = this.responseText;
+				}
+				ajax.open('POST','php/uploadImage.php',true);
+				ajax.send(values);
+				
+			})
+		});
+	</script>
+	
 </head>
 
 <body>
