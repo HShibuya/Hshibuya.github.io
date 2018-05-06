@@ -39,9 +39,9 @@ $img = base64_decode($imgData);
 
 $fileData = ''.$file_count.$date.$name.$secret.$title;
 
-echo name."<br/>";
+echo $name."<br/>";
 
-$fileHash = hash('sha256', fileData);
+$fileHash = hash('sha256', $fileData);
 $filename = $img_dir.'/'.$fileHash.'.png';
 echo chmod($img_dir,0755);
 
