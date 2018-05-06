@@ -56,7 +56,7 @@ $username = 'id3110622_hshibuya96';
 $password = '0511myh77';
 $dbname = 'id3110622_paintings';
 
-$connection = new mysqli($servername, $username, $password);
+$connection = new mysqli($servername, $username, $password, $dbname);
 $sql = "INSERT INTO paintings (pid, name, secret, descr, date) VALUES ($fileHash, $name, $secret, $desc, CURRENT_TIMESTAMP)";
 
 if ($connection->query($sql) === TRUE) {
