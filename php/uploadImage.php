@@ -15,29 +15,21 @@ if($paintings){
 }
 
 $imgData = $_POST['imageurl'];
+$name = 'unknown';
+$secret = 'unknown';
+$title = 'untitled';
+$desc = 'no description';
 if(isset($_POST['name'])){
 	$name = $_POST['name'];
-}
-else{
-	$name = 'unknown';
 }
 if(isset($_POST['secret'])){
 	$secret = $_POST['secret'];
 }
-else{
-	$secret = 'unknown';
-}
 if(isset($_POST['title'])){
 	$title = $_POST['title'];
 }
-else{
-	$title = 'untitled';
-}
 if(isset($_POST['description'])){
 	$desc = $_POST['description'];
-}
-else{
-	$desc = 'no description';
 }
 $date = date('Y-m-d H:i:s');
 
