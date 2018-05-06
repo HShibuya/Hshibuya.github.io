@@ -53,7 +53,7 @@ $success = file_put_contents($filename, $img);
 $servername = 'localhost';
 $username = 'id3110622_hshibuya96';
 $password = '0511myh77';
-$dbname = 'id3110622_paintings'
+$dbname = 'id3110622_paintings';
 
 $connection = new mysqli($servername, $username, $password);
 $sql = "INSERT INTO paintings (pid, name, secret, descr, date) VALUES ($fileHash, $name, $secret, $desc, CURRENT_TIMESTAMP)";
