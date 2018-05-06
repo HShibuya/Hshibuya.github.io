@@ -27,13 +27,12 @@ if(isset($_POST['title'])){
 else{
 	$title = 'untitled';
 }
-if(isset($_POST['desc'])){
-	$desc = $_POST['desc'];
+if(isset($_POST['description'])){
+	$desc = $_POST['description'];
 }
 else{
 	$desc = 'no description';
 }
-$date = G;
 
 $imgData = substr($imgData,strpos($imgData,",")+1);
 $imgData = str_replace(' ', '+', $imgData);

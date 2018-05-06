@@ -17,6 +17,8 @@
 				e.preventDefault();
 				var values = $(this).serialize();
 				
+				console.log(values)
+				
 				var ajax = new XMLHttpRequest();
 				ajax.onreadystatechange = function(){
 					document.getElementById('inputContainer').innerHTML = "Sent!";
