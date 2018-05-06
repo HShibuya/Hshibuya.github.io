@@ -31,7 +31,7 @@ if(isset($_POST['desc'])){
 	$desc = $_POST['desc'];
 }
 else{
-	$desc = 'no description'
+	$desc = 'no description';
 }
 $date = G
 
