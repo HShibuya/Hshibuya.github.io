@@ -24,6 +24,7 @@
 					document.getElementById('uploadImage').innerHTML = this.responseText;
 				}
 				ajax.open('POST','php/uploadImage.php',true);
+				ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				ajax.send(values);
 				
 			})
@@ -65,7 +66,7 @@
     
     <!-- Modal-->
     <div id="sendForm">
-        <form id="uploadImage" method='post' action='php/uploadImage.php'>
+        <form id="uploadImage" method='post' action=''>
             <span id="close" class="close" onclick="document.getElementById('sendForm').style.display='none'">&times;</span>
             <div class="imgcontainer">
                 <h3>Your Masterpiece</h3>
