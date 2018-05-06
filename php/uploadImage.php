@@ -57,7 +57,7 @@ $password = '0511myh77';
 $dbname = 'id3110622_paintings';
 
 $connection = new mysqli($servername, $username, $password, $dbname);
-$sql = "INSERT INTO paintings (pid, name, secret, descr, date) VALUES ('$fileHash', '$name', '$secret', '$desc', CURRENT_TIMESTAMP)";
+$sql = "INSERT INTO paintings (pid, name, secret, descr, pdate) VALUES ('$fileHash', '$name', '$secret', '$desc', CURRENT_TIMESTAMP)";
 
 if ($connection->query($sql) === TRUE) {
     echo "New record created successfully";
