@@ -1,6 +1,13 @@
 <?php
 echo "here <br/>";
-$img_dir = '/storage/ssd1/622/3110622/public_html/paint_queue';
+
+function debug($data){
+	$print = $data;
+	echo "<script>console.log('$print')<\script>";
+}
+
+$img_dir = '/storage/ssd1/622/3110622/public_html/paintings';
+//$img_dir = '/Users/HirokiShibuya/Sites/Personal Webpage/paintings';
 $file_count = 0;
 $paintings = glob($img_dir.'/*');
 if($paintings){
@@ -8,17 +15,53 @@ if($paintings){
 }
 
 $imgData = $_POST['imageurl'];
+$name = 'unknown';
+$secret = 'unknown';
+$title = 'untitled';
+$desc = 'no description';
+if(isset($_POST['name'])){
+	$name = $_POST['name'];
+}
+if(isset($_POST['secret'])){
+	$secret = $_POST['secret'];
+}
+if(isset($_POST['title'])){
+	$title = $_POST['title'];
+}
+if(isset($_POST['description'])){
+	$desc = $_POST['description'];
+}
+$date = date('Y-m-d H:i:s');
+
 $imgData = substr($imgData,strpos($imgData,",")+1);
 $imgData = str_replace(' ', '+', $imgData);
 $img = base64_decode($imgData);
 
-$filename = $img_dir.'/'.$file_count.'.png';
-chmod($img_dir,0755);
+$fileData = ''.$file_count.$date.$name.$secret.$title;
+
+echo $name."<br/>";
+
+$fileHash = hash('sha256', $fileData);
+$filename = $img_dir.'/'.$fileHash.'.png';
+echo chmod($img_dir,0755);
 
 echo "$filename<br/>";
 
 $success = file_put_contents($filename, $img);
 
-echo "$success";
 
-?>
+
+$servername = 'localhost';
+$username = 'id3110622_hshibuya96';
+$password = '0511myh77';
+$dbname = 'id3110622_paintings';
+
+$connection = new mysqli($servername, $username, $password, $dbname);
+$sql = "INSERT INTO paintings (pid, name, secret, descr, pdate) VALUES ('$fileHash', '$name', '$secret', '$desc', CURRENT_TIMESTAMP)";
+
+if ($connection->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $connection->error;
+}
+

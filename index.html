@@ -4,7 +4,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <meta charset="utf-8"/>
-    <title>Catbus's Super Awesome Page</title>
+    <title>Hiroki's Super Awesome WebPage</title>
     
     <link rel="stylesheet" type="text/css" href="main.css">
     
@@ -12,16 +12,31 @@
     <script type="text/paperscript" src="js/happyTurd.js" canvas="canvas1"></script>
 	
 	<script type="text/javascript">
-		$(function(){
-			3
-		})
+		$(function() {
+			$('#uploadImage').on('submit', function(e) {
+				e.preventDefault();
+				var values = $(this).serialize();
+				
+				console.log(values)
+				
+				var ajax = new XMLHttpRequest();
+				ajax.onreadystatechange = function(){
+					document.getElementById('inputContainer').innerHTML = "Sent!";
+						console.log(this.responseText);
+				}
+				ajax.open('POST','php/uploadImage.php',true);
+				ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				ajax.send(values);
+				
+			})
+		});
 	</script>
 </head>
 
 <body>
     <div id='header'>
-        <h1>Catbus's Super Awesome Page</h1><br/>
-        
+        <h1>Hiroki's Super Awesome WebPage</h1><br/>
+        <?php include 'php/hallfame.php';?>
     </div>
     
     <h2>Doodler:</h2> Draw to your heart's content!
@@ -51,7 +66,7 @@
     
     <!-- Modal-->
     <div id="sendForm">
-        <form id="uploadImage" method='post' action='php/uploadImage.php'>
+        <form id="uploadImage" method='post' action=''>
             <span id="close" class="close" onclick="document.getElementById('sendForm').style.display='none'">&times;</span>
             <div class="imgcontainer">
                 <h3>Your Masterpiece</h3>

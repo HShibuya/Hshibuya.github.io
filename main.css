@@ -1,5 +1,6 @@
 html{
     width:  100%;
+	min-width: 1054px;
     background: linear-gradient(-90deg, rgba(255,0,0,0.5), rgba(255,127,0,0.5), rgba(255,255,0,0.5),rgba(0,255,0,0.5),rgba(0,255,255,0.5),rgba(0,127,255,0.5),rgba(0,0,255,0.5),rgba(255,0,255,0.5),rgba(255,0,127,0.5));
 }
 @font-face{
@@ -8,6 +9,10 @@ html{
 }
 body{
     font-family: arb;
+}
+#header{
+	display: absolute;
+	margin:20px 0px;
 }
 h2{
     display:inline-block;
@@ -131,6 +136,7 @@ h3{
     position: relative;
     margin: 20px auto;
     width:80%;
+	text-align: center;
 }
 .inputText{
     display: flex;
