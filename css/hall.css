@@ -81,7 +81,7 @@ html{
 #dateUp{
 	display: inline-block;
 	position: relative;
-	margin: auto;
+	margin: 0px;
 	right: 0px;
 	text-align: right;
 }
