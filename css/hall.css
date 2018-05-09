@@ -59,8 +59,9 @@ body{
     position: absolute;
     right: 6%;
     top: 4%;
-    width: 2%;
-	font-size:100%;
+	width:2%;
+	height:2%;
+	font-size:2vw;
     cursor:pointer;
 	
 }
