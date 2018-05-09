@@ -71,7 +71,7 @@
 			echo("<script>console.log('Connection successful')</script>");
 		}
 		
-		$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
+		$sql = 'SELECT pid, name, title, descr, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
 		$results = $connection->query($sql);
 		if ($results->num_rows > 0) {
 			echo("<script>console.log('Query successful')</script>");
