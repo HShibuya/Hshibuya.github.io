@@ -63,21 +63,20 @@ html{
 	margin: 0px auto;
 }
 #titleUp{
-	position: absolute;
+	position: relative;
 	display: block;
-	left:0px;
 	text-align: left;
-	margin: 0px;
 }
 #nameUp{
 	display: inline-block;
-	position: absolute;
+	position: relative;
+	margin: 0px auto;
 	left:0px;
 	text-align: left;
 }
 #dateUp{
 	display: inline-block;
-	position: absolute;
+	position: relative;
 	right: 0px;
 	text-align: right;
 }
