@@ -9,8 +9,8 @@
 		<!-- Modal HTML that appears when a painting is clicked -->
 		
 		<div id='background'>
-			<div id="showDesc">
-				<span id="close" class="close" onclick="$(#showDesc).style.display='none'">&times;</span>
+			<div id="zoom">
+				<span id="close" class="close" onclick="$(#zoom).style.display='none'">&times;</span>
 				<div class="imgcontainer">
 					<h3 id='title'></h3>
 					<img id='imageUp'/>
@@ -39,7 +39,7 @@
 			$functStr = "showDesc('".$pid."','".$name."','".$title."','".$desc."','".$date."','".$comment."')";
 			
 			$html = '<div id="$pid" class="painting" onclick="'.$functStr.'">
-				<p class="title">$title</p>
+				<p class="title">'.$title.'</p>
 				<img src="../paintings/'.$pid.'.png">
 				<p class="name"><i>By: '.$name.'</i></p>
 			</div>';
@@ -84,7 +84,7 @@
 			
 			//function to fill in the modal HTML for clicked painting
 			function showDesc(pid,name,title,descr,date,comment){
-				$('#showDesc').style.display='block';
+				$('#zoom').style.display='block';
 				$('#imageUp').attr('src','../paintings/'+pid+'.png');
 				$('#title').html(title);
 				$('#nameUp').html('By: '+name);
