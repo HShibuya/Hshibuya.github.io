@@ -29,7 +29,6 @@ if(isset($_POST['title'])){
 if(isset($_POST['description'])){
 	$desc = $_POST['description'];
 }
-$date = date('Y-m-d H:i:s');
 
 $imgData = substr($imgData,strpos($imgData,",")+1);
 $imgData = str_replace(' ', '+', $imgData);

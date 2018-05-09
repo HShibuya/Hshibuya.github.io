@@ -51,7 +51,8 @@
 			$html = "<div id='$pid'' class='painting' onclick='showDesc('$pid','$name','$title','$desc','$date','$comment')'>
 				<p class='title'>$title</p>
 				<img src='../paintings/$pid".".png'>
-				<p class='name'><i>By: $name</i></p>";
+				<p class='name'><i>By: $name</i></p>
+			</div>";
 			echo $html;
 		}
 		
@@ -71,7 +72,7 @@
 			echo("<script>console.log('Connection successful')</script>");
 		}
 		
-		$sql = 'SELECT paintings.pid, name, title, descr, pdate, comments FROM paintings INNER JOIN approved ON paintings.pid=approved.pid ORDER BY pdate';
+		$sql = 'SELECT paintings.pid, name, title, descr, DATE(pdate), comments FROM paintings INNER JOIN approved ON paintings.pid=approved.pid ORDER BY pdate';
 		$results = $connection->query($sql);
 		if ($results->num_rows > 0) {
 			echo("<script>console.log('Query successful')</script>");
