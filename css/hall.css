@@ -47,7 +47,7 @@ html{
     border: 1px solid #888;
     border-radius:25px;
 }
-.imageUp{
+#imageUp{
 	display:block;
     margin: 10px auto 20px auto;
     width:60%;
