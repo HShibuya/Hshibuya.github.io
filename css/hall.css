@@ -65,6 +65,8 @@ html{
 }
 #titleUp{
 	position: relative;
+	width: 60%;
+	margin: auto;
 	display: block;
 	text-align: left;
 }
