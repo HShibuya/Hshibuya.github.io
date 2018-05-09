@@ -48,9 +48,6 @@ body{
 }
 #zoom{
     position: relative;
-	background-image: image();
-	background: 
-	box-shadow: 0px 0px 0px 0px azure;
     background-color: azure;
     margin: 10% auto 10% auto;
     width: 80%;
@@ -58,7 +55,9 @@ body{
     border-radius:25px;
 }
 #zoom::after{
-	background-image: url(../images/wall_texture.jpg)
+	background-image: url(../images/wall_texture.jpg);
+	opacity: 0.5;
+	z-index: 1;
 }
 .close{
     display:block;
