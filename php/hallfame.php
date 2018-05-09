@@ -50,7 +50,7 @@
 			
 			$html = "<div id='$pid'' class='painting' onclick='showDesc('$pid','$name','$title','$descr','$date','$comment')'>
 				<p class='title'>$title</p>
-				<img src='paintings/$pid".".png'>
+				<img src='../paintings/$pid".".png'>
 				<p class='name'><i>By: $name</i></p>";
 			echo $html;
 		}
