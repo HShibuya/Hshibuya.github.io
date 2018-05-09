@@ -75,6 +75,7 @@
 		$sql = 'SELECT pid FROM paintings;';
 		$results = $connection->query($sql);
 		if ($result->num_rows > 0) {
+			echo("<script>console.log('Query successful')</script>");
 			// output data of each row
 			while($row = $result->fetch_assoc()) {
 				genDiv($row);
