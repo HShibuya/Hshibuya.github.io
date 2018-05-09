@@ -57,12 +57,27 @@ html{
     border-width: 5px;
 }
 #artistContainer{
-	display: 
+	display: inline-block;
 	min-width: 60%;
 }
+#titleUp{
+	position: relative;
+	display: block;
+	text-align: left;
+}
 #nameUp{
+	display: inline-block;
+	position: relative;
 	left:0px;
-	right: 25px;
+	right: 20px;
+	text-align: left;
+}
+#dateUp{
+	display: inline-block;
+	position: relative;
+	left:20px;
+	right: 0px;
+	text-align: right;
 }
 #date{
 	left: 25px;

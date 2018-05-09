@@ -11,13 +11,11 @@
 		<div id='background'>
 			<div id="zoom">
 				<span id="close" class="close" onclick="$('#background').css('display','none')">&times;</span>
-				<div class="imgcontainer">
-					<h3 id='title'></h3>
-					<img id='imageUp'/>
-				</div>
-				<div id=artistContainer> 
+				<img id='imageUp'/>
+				<div id=artistContainer>
+					<h3 id='titleUp'></h3>
 					<p id='nameUp'></p>
-					<p id='date'></p>
+					<p id='dateUp'></p>
 				</div>
 				<div id='descContainer' class="container">
 					<label for='desc'>A Little Bit About This Piece:</label>
