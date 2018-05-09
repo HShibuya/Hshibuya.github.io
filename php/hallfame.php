@@ -86,11 +86,11 @@
 				function showDesc(pid,name,title,descr,date,comment){
 					$('#background').css('display','block');
 					$('#imageUp').attr('src','../paintings/'+pid+'.png');
-					$('#title').html(title);
+					$('#titleUp').html(title);
 					$('#nameUp').html('By: '+name);
 					$('#desc').html(descr);
 					$('#comments').html(comment);
-					$('#date').html(date);
+					$('#dateUp').html(date);
 					
 					console.log('here');
 				}
