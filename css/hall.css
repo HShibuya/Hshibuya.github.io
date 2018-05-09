@@ -18,3 +18,9 @@
     border: 1px solid #888;
     border-radius:25px;
 }
+.painting{
+	width:256px;
+	border-style: ridge;
+	border-radius: 10px;
+	border-color: blue;
+}
