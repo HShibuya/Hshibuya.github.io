@@ -73,12 +73,14 @@ html{
 #nameUp{
 	display: inline-block;
 	position: relative;
+	margin: auto;
 	left:0px;
 	text-align: left;
 }
 #dateUp{
 	display: inline-block;
 	position: relative;
+	margin: auto;
 	right: 0px;
 	text-align: right;
 }
