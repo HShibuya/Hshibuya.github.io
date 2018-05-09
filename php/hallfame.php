@@ -84,7 +84,7 @@
 
 				//function to fill in the modal HTML for clicked painting
 				function showDesc(pid,name,title,descr,date,comment){
-					$('#zoom').css('display','block');
+					$('#background').css('display','block');
 					$('#imageUp').attr('src','../paintings/'+pid+'.png');
 					$('#title').html(title);
 					$('#nameUp').html('By: '+name);
