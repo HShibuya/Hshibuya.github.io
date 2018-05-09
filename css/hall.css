@@ -57,6 +57,10 @@ html{
     border-width: 5px;
 }
 .plaque{
+	position: relative;
+	margin: 30px auto 10px auto;
+	min-width: 60%;
+	width: 60%;
 	border-color: grey;
 	border-style: inset;
 	padding: 20px;
@@ -64,8 +68,6 @@ html{
 }
 #artistContainer{
 	display: flex;
-	min-width: 60%;
-	width: 60%;
 	margin: 20px auto 0px auto;
 	justify-content: space-between;
 }
