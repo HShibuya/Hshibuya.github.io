@@ -57,8 +57,8 @@ body{
 .close{
     display:block;
     position: absolute;
-    right: 6%;
-    top: 4%;
+    right: 5%;
+    top: 5%;
 	width:2%;
 	height:2%;
 	font-size:2vw;
