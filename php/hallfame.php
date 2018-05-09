@@ -15,9 +15,11 @@
 					<h3 id='title'></h3>
 					<img id='imageUp'/>
 				</div>
-				<div id='descContainer' class="container">
+				<div id=artistContainer> 
 					<p id='nameUp'></p>
 					<p id='date'></p>
+				</div>
+				<div id='descContainer' class="container">
 					<label for='desc'>A Little Bit About This Piece:</label>
 					<p id='desc'></p>
 					<label for='comments'>My Comments!</label>

@@ -56,5 +56,16 @@ html{
     border-style: groove;
     border-width: 5px;
 }
+#artistContainer{
+	min-width: 60%;
+}
+#nameUp{
+	left:0px;
+	right: 25px;
+}
+#date{
+	left: 25px;
+	right: 0px;
+}
 
 
