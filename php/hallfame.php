@@ -69,6 +69,9 @@
 			echo("Connection failed: ".$connection->connect_error."\n");
 			echo("<script>console.log('Connection failed: ".$connection->connect_error."')</script>");
 		} 
+		else{
+			echo("Connection successful");
+		}
 		
 		//$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
 		$sql = 'SELECT pid FROM paintings;';
