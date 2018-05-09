@@ -48,7 +48,7 @@
 			$date = $row["pdate"];
 			$comment = $row["comments"];
 			
-			$html = "<div id='$pid'' class='painting' onclick='showDesc('$pid','$name','$title','$desc','$date','$comment')'>
+			$html = "<div id='$pid' class='painting' onclick='showDesc('$pid','$name','$title','$desc','$date','$comment')'>
 				<p class='title'>$title</p>
 				<img src='../paintings/$pid".".png'>
 				<p class='name'><i>By: $name</i></p>
