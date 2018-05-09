@@ -10,7 +10,7 @@
 		
 		<div id='background'>
 			<div id="zoom">
-				<span id="close" class="close" onclick="$(#zoom).style.display='none'">&times;</span>
+				<span id="close" class="close" onclick="$(#zoom).css('display','none')">&times;</span>
 				<div class="imgcontainer">
 					<h3 id='title'></h3>
 					<img id='imageUp'/>
@@ -84,7 +84,7 @@
 			
 			//function to fill in the modal HTML for clicked painting
 			function showDesc(pid,name,title,descr,date,comment){
-				$('#zoom').style.display='block';
+				$('#zoom').css('display','block');
 				$('#imageUp').attr('src','../paintings/'+pid+'.png');
 				$('#title').html(title);
 				$('#nameUp').html('By: '+name);
