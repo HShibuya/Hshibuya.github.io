@@ -59,6 +59,7 @@ html{
 #artistContainer{
 	display: block;
 	min-width: 60%;
+	width: 60%;
 	margin: 0px auto;
 }
 #titleUp{
