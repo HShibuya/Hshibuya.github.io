@@ -13,7 +13,7 @@
 				$('#title').html(title);
 				$('#nameUp').html('By: '+name);
 				$('#desc').html(descr);
-				$('#comment').html(comment);
+				$('#comments').html(comment);
 				$('#date').html(date);
 			}
 		</script>
@@ -32,8 +32,8 @@
 					<p id='date'></p>
 					<label for='desc'>A Little Bit About This Piece:</label>
 					<p id='desc'></p>
-					<label for='comment'>My Comments!</label>
-					<p id='comment'></p>
+					<label for='comments'>My Comments!</label>
+					<p id='comments'></p>
 				</div>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 			$title = $row["title"];
 			$desc = $row["descr"];
 			$date = $row["pdate"];
-			$comment = $row["comment"];
+			$comment = $row["comments"];
 			
 			$html = "<div id='$pid'' class='painting' onclick='showDesc('$pid','$name','$title','$descr','$date','$comment')'>
 				<p class='title'>$title</p>
