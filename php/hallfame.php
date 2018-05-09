@@ -65,7 +65,7 @@
 		$connection = new mysqli($servername, $username, $password, $dbname);
 		
 		if ($connection->connect_error) {
-			echo("<script>console.log('Connection failed: ".$connection->connect_error."')</script>");
+			echo("Connection failed: ".$connection->connect_error."\n");
 		} 
 		
 		//$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
