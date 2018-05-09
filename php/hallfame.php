@@ -3,19 +3,6 @@
 		<title>Hall Of Fame</title>
 		<link rel="stylesheet" type="text/css" href="../css/hall.css">
 		
-		<script type="text/javascript">
-			
-			//function to fill in the modal HTML for clicked painting
-			function showDesc(pid,name,title,descr,date,comment){
-				$('#showDesc').style.display='block';
-				$('#imageUp').attr('src','../paintings/'+pid+'.png');
-				$('#title').html(title);
-				$('#nameUp').html('By: '+name);
-				$('#desc').html(descr);
-				$('#comments').html(comment);
-				$('#date').html(date);
-			}
-		</script>
 	</head>
 	<body>
 		
@@ -91,6 +78,21 @@
 		
 		?>
 		
+		
+		
+		<script type="text/javascript">
+			
+			//function to fill in the modal HTML for clicked painting
+			function showDesc(pid,name,title,descr,date,comment){
+				$('#showDesc').style.display='block';
+				$('#imageUp').attr('src','../paintings/'+pid+'.png');
+				$('#title').html(title);
+				$('#nameUp').html('By: '+name);
+				$('#desc').html(descr);
+				$('#comments').html(comment);
+				$('#date').html(date);
+			}
+		</script>
 		
 	</body>
 </html>
