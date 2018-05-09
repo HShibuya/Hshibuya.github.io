@@ -56,6 +56,11 @@ html{
     border-style: groove;
     border-width: 5px;
 }
+.plaque{
+	border-color: lightgrey;
+	border-style: inset;
+	box-shadow: 
+}
 #artistContainer{
 	display: flex;
 	min-width: 60%;
@@ -74,7 +79,6 @@ html{
 	display: inline-block;
 	position: relative;
 	margin: 0px;
-	margin: auto;
 	left:0px;
 	text-align: left;
 }
