@@ -57,15 +57,16 @@ html{
     border-width: 5px;
 }
 .plaque{
-	border-color: lightgrey;
+	border-color: grey;
 	border-style: inset;
-	box-shadow: 
+	padding: 20px;
+	box-shadow: 3px 3px 2px lightgrey;
 }
 #artistContainer{
 	display: flex;
 	min-width: 60%;
 	width: 60%;
-	margin: 0px auto;
+	margin: 20px auto 0px auto;
 	justify-content: space-between;
 }
 #titleUp{
