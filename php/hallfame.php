@@ -9,7 +9,7 @@
 			//function to fill in the modal HTML for clicked painting
 			function showDesc(pid,name,title,descr,date,comment){
 				$('#showDesc').style.display='block';
-				$('#imageUp').attr('src','paintings/'+pid+'.png');
+				$('#imageUp').attr('src','../paintings/'+pid+'.png');
 				$('#title').html(title);
 				$('#nameUp').html('By: '+name);
 				$('#desc').html(descr);
@@ -81,7 +81,7 @@
 			}
 		}
 		else{
-			echo "<script>console.log('Error: ".$sql."');console.log('".$connection->errno."')</script>;";
+			echo "<script>console.log('Error: ".$sql."');console.log('".$connection->error."')</script>;";
 		}
 			
 		
