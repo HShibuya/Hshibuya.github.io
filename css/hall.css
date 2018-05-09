@@ -54,6 +54,14 @@ body{
     border: 1px solid #888;
     border-radius:25px;
 }
+.close{
+    display:block;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: 30px;
+    cursor:pointer;
+}
 #imageUp{
 	display:block;
 	box-sizing: border-box;
