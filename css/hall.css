@@ -33,7 +33,13 @@ html{
 	border-style: ridge;
 	border-radius: 10px;
 	border-color: blue;
+	align-content: center;
 }
 .drawing{
-	width:80%
+	margin: auto;
+	width:80%;
+	background-color: white;
+    border-color:chocolate;
+    border-style: groove;
+    border-width: 5px;
 }

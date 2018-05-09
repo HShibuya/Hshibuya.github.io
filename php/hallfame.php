@@ -91,6 +91,8 @@
 					$('#desc').html(descr);
 					$('#comments').html(comment);
 					$('#date').html(date);
+					
+					console.log('here');
 				}
 			</script>
 			
