@@ -79,6 +79,7 @@
 			echo("<script>console.log('Query successful')</script>");
 			// output data of each row
 			while($row = $result->fetch_assoc()) {
+				echo("<script>console.log('row')</script>");
 				genDiv($row);
 			}
 		}
