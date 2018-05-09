@@ -56,12 +56,14 @@
 			
 		}
 		
+		//$servername = 'localhost';
 		$servername = 'localhost';
 		$username = 'id3110622_hshibuya96';
 		$password = 'boort7467';
 		$dbname = 'id3110622_paintings';
 
 		$connection = new mysqli($servername, $username, $password, $dbname);
+		//$connection = new mysqli($servername);
 		
 		if ($connection->connect_error) {
 			echo("Connection failed: ".$connection->connect_error."\n");
@@ -69,7 +71,7 @@
 		} 
 		
 		//$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
-		$sql = 'SELECT pid FROM paintings';
+		$sql = 'SELECT pid FROM paintings;';
 		$results = $connection->query($sql);
 		if ($result->num_rows > 0) {
 			// output data of each row
