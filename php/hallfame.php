@@ -10,7 +10,7 @@
 		
 		<div id='background'>
 			<div id="zoom">
-				<span id="close" class="close" onclick="$('#zoom').css('display','none')">&times;</span>
+				<span id="close" class="close" onclick="$('#background').css('display','none')">&times;</span>
 				<div class="imgcontainer">
 					<h3 id='title'></h3>
 					<img id='imageUp'/>
