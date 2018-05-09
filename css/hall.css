@@ -36,6 +36,7 @@ html{
 	align-content: center;
 }
 .drawing{
+	display:block;
 	margin: auto;
 	width:80%;
 	background-color: white;
