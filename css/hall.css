@@ -66,13 +66,14 @@ html{
 #titleUp{
 	position: relative;
 	width: 60%;
-	margin: auto;
+	margin: 0px;
 	display: block;
 	text-align: left;
 }
 #nameUp{
 	display: inline-block;
 	position: relative;
+	margin: 0px;
 	margin: auto;
 	left:0px;
 	text-align: left;
