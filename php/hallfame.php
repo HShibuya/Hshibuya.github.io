@@ -12,8 +12,8 @@
 			<div id="zoom">
 				<span id="close" class="close" onclick="$('#background').css('display','none')">&times;</span>
 				<img id='imageUp'/>
+				<h3 id='titleUp'></h3>
 				<div id=artistContainer>
-					<h3 id='titleUp'></h3>
 					<p id='nameUp'></p>
 					<p id='dateUp'></p>
 				</div>
