@@ -66,11 +66,10 @@
 		//$connection = new mysqli($servername);
 		
 		if ($connection->connect_error) {
-			echo("Connection failed: ".$connection->connect_error."\n");
 			echo("<script>console.log('Connection failed: ".$connection->connect_error."')</script>");
 		} 
 		else{
-			echo("Connection successful");
+			echo("<script>console.log('Connection successful')</script>");
 		}
 		
 		//$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
@@ -84,7 +83,6 @@
 		}
 		else{
 			echo "<script>console.log('Error: ".$sql."');console.log('".$connection->error."')</script>;";
-			echo "Error: ".$sql.$connection->error;
 		}
 			
 		
