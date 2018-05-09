@@ -57,15 +57,15 @@ body{
 .close{
     display:block;
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 15px;
+    top: 15px;
     font-size: 30px;
     cursor:pointer;
 }
 #imageUp{
 	display:block;
 	box-sizing: border-box;
-    margin: 10px auto 20px auto;
+    margin: 25px auto 20px auto;
     width:90%;
     background-color: white;
     border-color:chocolate;
