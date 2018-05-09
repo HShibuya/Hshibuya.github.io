@@ -61,8 +61,10 @@ html{
 	margin: 30px auto 10px auto;
 	min-width: 60%;
 	width: 60%;
+	background: white;
 	border-color: grey;
 	border-style: inset;
+	border-width: 1px;
 	padding: 20px;
 	box-shadow: 3px 3px 2px lightgrey;
 }
