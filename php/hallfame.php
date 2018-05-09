@@ -40,7 +40,7 @@
 			
 			$html = '<div id="$pid" class="painting" onclick="'.$functStr.'">
 				<p class="title">'.$title.'</p>
-				<img src="../paintings/'.$pid.'.png">
+				<img class= "drawing" src="../paintings/'.$pid.'.png">
 				<p class="name"><i>By: '.$name.'</i></p>
 			</div>';
 			echo $html;
