@@ -20,7 +20,8 @@
 }
 .painting{
 	display: inline-block;
-	width:256px;
+	width:384px;
+	margin: 40px 20px;
 	border-style: ridge;
 	border-radius: 10px;
 	border-color: blue;
