@@ -60,8 +60,8 @@ body{
     right: 2%;
     top: 2%;
 	width:2%;
-	height:2%;
-	font-size:20px;
+	height:calc(2%*attr(height)/attr(width));
+	font-size:25px;
     cursor:pointer;
 	
 }
