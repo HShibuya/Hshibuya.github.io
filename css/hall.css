@@ -70,12 +70,12 @@ body{
 	box-sizing: border-box;
 	min-width: 60%;
 	width: 60%;
-	background: lightgrey;
+	background: #F5F5F5;
 	border-color: #BEBEBE;
-	border-style: inset;
+	border-style: outset;
 	border-width: 1px;
 	padding: 20px;
-	box-shadow: 3px 3px 2px silver;
+	box-shadow: 3px 3px 2px #B0B0B0;
 }
 #artistContainer{
 	display: flex;
