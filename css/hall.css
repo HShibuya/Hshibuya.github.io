@@ -57,10 +57,11 @@ html{
     border-width: 5px;
 }
 #artistContainer{
-	display: block;
+	display: flex;
 	min-width: 60%;
 	width: 60%;
 	margin: 0px auto;
+	justify-content: space-between;
 }
 #titleUp{
 	position: relative;
@@ -70,7 +71,6 @@ html{
 #nameUp{
 	display: inline-block;
 	position: relative;
-	margin: 0px auto;
 	left:0px;
 	text-align: left;
 }
