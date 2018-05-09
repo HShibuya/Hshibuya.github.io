@@ -55,7 +55,7 @@ if ($connection->connect_error) {
 	echo("Connection failed: ".$connection->connect_error."\n");
 };
 
-$sql = "INSERT INTO paintings (pid, name, secret, descr, pdate) VALUES ('$fileHash', '$name', '$secret', '$desc', CURRENT_TIMESTAMP)";
+$sql = "INSERT INTO paintings (pid, name, secret, title, descr, pdate) VALUES ('$fileHash', '$name', '$secret', '$title','$desc', CURRENT_TIMESTAMP)";
 
 if ($connection->query($sql) === TRUE) {
     echo "New record created successfully";
