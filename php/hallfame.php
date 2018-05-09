@@ -89,7 +89,7 @@
 					$('#background').css('display','block');
 					$('#imageUp').attr('src','../paintings/'+pid+'.png');
 					$('#titleUp').html(title);
-					$('#nameUp').html('By: '+name);
+					$('#nameUp').html('<i>By: '+name+'</i>');
 					$('#desc').html(descr);
 					$('#comments').html(comment);
 					$('#dateUp').html(date);

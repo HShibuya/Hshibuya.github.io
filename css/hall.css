@@ -48,17 +48,23 @@ body{
 }
 #zoom{
     position: relative;
+	background-image: image();
+	background: 
+	box-shadow: 0px 0px 0px 0px azure;
     background-color: azure;
     margin: 10% auto 10% auto;
     width: 80%;
     border: 1px solid #888;
     border-radius:25px;
 }
+#zoom::after{
+	background-image: url(../images/wall_texture.jpg)
+}
 .close{
     display:block;
     position: absolute;
     right: 2%;
-    top: calc(2%*attr(width));
+    top: 0px;
 	font-size:25px;
     cursor:pointer;
 	
