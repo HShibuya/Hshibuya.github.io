@@ -81,7 +81,7 @@
 			}
 		}
 		else{
-			echo "<script>console.log('Error: ".$sql."');console.log('".$connection->error."')</script>;";
+			echo '<script>console.log("Error: '.$sql.'");console.log("'.$connection->error.'")</script>;';
 		}
 			
 		
