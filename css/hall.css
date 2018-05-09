@@ -70,6 +70,7 @@ html{
 #nameUp{
 	display: inline-block;
 	position: relative;
+	margin: 0px auto;
 	left:0px;
 	right: 20px;
 	text-align: left;
@@ -77,6 +78,7 @@ html{
 #dateUp{
 	display: inline-block;
 	position: relative;
+	margin: 0px auto;
 	left:20px;
 	right: 0px;
 	text-align: right;
