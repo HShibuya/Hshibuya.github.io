@@ -57,8 +57,7 @@
 		}
 		
 		$servername = 'localhost';
-		//$username = 'id3110622_hshibuya96';
-		$username = 'root';
+		$username = 'id3110622_hshibuya96';
 		$password = 'boort7467';
 		$dbname = 'id3110622_paintings';
 
