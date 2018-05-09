@@ -53,7 +53,6 @@
 				<img src='paintings/$pid".".png'>
 				<p class='name'><i>By: $name</i></p>";
 			echo $html;
-			
 		}
 		
 		//$servername = 'localhost';
@@ -82,7 +81,7 @@
 			}
 		}
 		else{
-			echo "<script>console.log('Error: ".$sql."');console.log('".$connection->error."')</script>;";
+			echo "<script>console.log('Error: ".$sql."');console.log('".$connection->errno."')</script>;";
 		}
 			
 		
