@@ -74,10 +74,10 @@
 		//$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
 		$sql = 'SELECT pid FROM paintings;';
 		$results = $connection->query($sql);
-		if ($result->num_rows > 0) {
+		if ($results->num_rows > 0) {
 			echo("<script>console.log('Query successful')</script>");
 			// output data of each row
-			while($row = $result->fetch_assoc()) {
+			while($row = $results->fetch_assoc()) {
 				echo("<script>console.log('row')</script>");
 				genDiv($row);
 			}
