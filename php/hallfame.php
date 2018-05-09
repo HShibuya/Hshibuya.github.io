@@ -41,12 +41,12 @@
 		
 		<?php
 		function genDiv($row){
-			$pid = $row['pid'];
-			$name = $row['name'];
-			$title = $row['title'];
-			$desc = $row['descr'];
-			$date = $row['pdate'];
-			$comment = $row['comment'];
+			$pid = $row["pid"];
+			$name = $row["name"];
+			$title = $row["title"];
+			$desc = $row["descr"];
+			$date = $row["pdate"];
+			$comment = $row["comment"];
 			
 			$html = "<div id='$pid'' class='painting' onclick='showDesc('$pid','$name','$title','$descr','$date','$comment')'>
 				<p class='title'>$title</p>
@@ -71,14 +71,12 @@
 			echo("<script>console.log('Connection successful')</script>");
 		}
 		
-		//$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
-		$sql = 'SELECT pid FROM paintings;';
+		$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
 		$results = $connection->query($sql);
 		if ($results->num_rows > 0) {
 			echo("<script>console.log('Query successful')</script>");
 			// output data of each row
 			while($row = $results->fetch_assoc()) {
-				echo("<script>console.log('row')</script>");
 				genDiv($row);
 			}
 		}
