@@ -2,8 +2,7 @@
 	<head>
 		<title>Hall Of Fame</title>
 		<link rel="stylesheet" type="text/css" href="../css/hall.css">
-	</head>
-	<body>
+		
 		<script type="text/javascript">
 			
 			//function to fill in the modal HTML for clicked painting
@@ -17,6 +16,8 @@
 				$('#date').html(date);
 			}
 		</script>
+	</head>
+	<body>
 		
 		<!-- Modal HTML that appears when a painting is clicked -->
 		
