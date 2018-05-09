@@ -45,7 +45,7 @@
 			$name = $row["name"];
 			$title = $row["title"];
 			$desc = $row["descr"];
-			$date = $row["pdate"];
+			$date = $row["only_date"];
 			$comment = $row["comments"];
 			
 			$functStr = "showDesc('".$pid."','".$name."','".$title."','".$desc."','".$date."','".$comment."')";
@@ -74,7 +74,7 @@
 			echo("<script>console.log('Connection successful')</script>");
 		}
 		
-		$sql = 'SELECT paintings.pid, name, title, descr, DATE(pdate) AS pdate, comments FROM paintings INNER JOIN approved ON paintings.pid=approved.pid ORDER BY pdate';
+		$sql = 'SELECT paintings.pid, name, title, descr, DATE(pdate) AS only_date, comments FROM paintings INNER JOIN approved ON paintings.pid=approved.pid ORDER BY pdate';
 		$results = $connection->query($sql);
 		if ($results->num_rows > 0) {
 			echo("<script>console.log('Query successful')</script>");
