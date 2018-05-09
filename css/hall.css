@@ -57,8 +57,7 @@ html{
     border-width: 5px;
 }
 #artistContainer{
-	position: static;
-	display: inline-block;
+	display: block;
 	min-width: 60%;
 	margin: 0px auto;
 }
