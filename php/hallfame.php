@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>Hall Of Fame</title>
+		<link rel="stylesheet" type="text/css" href="../css/hall.css">
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -56,19 +57,29 @@
 		}
 		
 		$servername = 'localhost';
-		$username = 'id3110622_hshibuya96';
-		$password = '0511myh77';
+		//$username = 'id3110622_hshibuya96';
+		$username = 'root';
+		$password = 'boort7467';
 		$dbname = 'id3110622_paintings';
 
 		$connection = new mysqli($servername, $username, $password, $dbname);
 		
-		$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
-		$results = connection->query($sql);
+		if ($connection->connect_error) {
+			echo("<script>console.log('Connection failed: ".$connection->connect_error."')</script>");
+		} 
+		
+		//$sql = 'SELECT pid, name, title, desc, pdate, comment FROM paintings INNER JOIN approved ON paintings.pid=approved.pid';
+		$sql = 'SELECT pid FROM paintings';
+		$results = $connection->query($sql);
 		if ($result->num_rows > 0) {
 			// output data of each row
 			while($row = $result->fetch_assoc()) {
 				genDiv($row);
 			}
+		}
+		else{
+			echo "<script>console.log('Error: ".$sql."');console.log('".$connection->error."')</script>;";
+		}
 			
 		
 		?>

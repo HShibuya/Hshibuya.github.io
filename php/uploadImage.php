@@ -1,13 +1,11 @@
 <?php
-echo "here <br/>";
 
 function debug($data){
 	$print = $data;
 	echo "<script>console.log('$print')<\script>";
 }
 
-$img_dir = '/storage/ssd1/622/3110622/public_html/paintings';
-//$img_dir = '/Users/HirokiShibuya/Sites/Personal Webpage/paintings';
+$img_dir = '../paintings';
 $file_count = 0;
 $paintings = glob($img_dir.'/*');
 if($paintings){
@@ -39,13 +37,8 @@ $img = base64_decode($imgData);
 
 $fileData = ''.$file_count.$date.$name.$secret.$title;
 
-echo $name."<br/>";
-
 $fileHash = hash('sha256', $fileData);
 $filename = $img_dir.'/'.$fileHash.'.png';
-echo chmod($img_dir,0755);
-
-echo "$filename<br/>";
 
 $success = file_put_contents($filename, $img);
 
@@ -53,15 +46,20 @@ $success = file_put_contents($filename, $img);
 
 $servername = 'localhost';
 $username = 'id3110622_hshibuya96';
-$password = '0511myh77';
+$password = 'boort7467';
 $dbname = 'id3110622_paintings';
 
 $connection = new mysqli($servername, $username, $password, $dbname);
+
+if ($connection->connect_error) {
+	echo("Connection failed: ".$connection->connect_error."\n");
+};
+
 $sql = "INSERT INTO paintings (pid, name, secret, descr, pdate) VALUES ('$fileHash', '$name', '$secret', '$desc', CURRENT_TIMESTAMP)";
 
 if ($connection->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $connection->error;
+    echo "Error: ".$sql."<br>".$connection->error;
 }
 
