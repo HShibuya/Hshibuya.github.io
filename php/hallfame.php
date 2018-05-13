@@ -41,9 +41,9 @@
 				$functStr = "showDesc('".$pid."','".$name."','".$title."','".$desc."','".$date."','".$comment."')";
 
 				$html = '<div id="'.$pid.'" class="painting" onclick="'.$functStr.'">
-					<p class="title">'.$title.'</p>
 					<img class= "drawing" src="../paintings/'.$pid.'.png">
-					<p class="name"><i>By: '.$name.'</i></p>
+					<p class="title" style="font-size:24px;">'.$title.'</p>
+					<p class="name" style="font-size:16px;"><i>By: '.$name.'</i></p>
 				</div>';
 				echo $html;
 			}
@@ -86,6 +86,7 @@
 
 				//function to fill in the modal HTML for clicked painting
 				function showDesc(pid,name,title,descr,date,comment){
+
 					$('#background').css('display','block');
 					$('#imageUp').attr('src','../paintings/'+pid+'.png');
 					$('#titleUp').html(title);
@@ -93,8 +94,6 @@
 					$('#desc').html(descr);
 					$('#comments').html(comment);
 					$('#dateUp').html(date);
-					
-					console.log('here');
 				}
 			</script>
 			
