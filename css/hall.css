@@ -11,7 +11,11 @@ body{
     font-family: arb;
 }
 #gallery{
-	padding: 20px 10px;
+	margin: 0px 5%;
+	background-image: url(../images/wall_texture.jpg);
+	background-size:400px;
+	box-shadow: inset 0 0 0 2000px rgba(240,255,255,0.7);
+    border: 1px solid #888;
 }
 .painting{
 	display: inline-block;
@@ -54,12 +58,15 @@ body{
     border: 1px solid #888;
     border-radius:25px;
 }
-#zoom::after{
-	position: absolute;
-	
-	background-image: url("../images/wall_texture.jpg");
-	opacity: 0.5;
-	z-index: 2;
+#zoom{
+    position: relative;
+    background-image: url("../images/wall_texture.jpg");
+    background-size: 1000px;
+    margin: 10% auto 10% auto;
+    width: 80%;
+    box-shadow: inset 0 0 0 2000px rgba(215,255,255,0.5);
+    border: 1px solid #888;
+    border-radius:25px;
 }
 .close{
     display:block;
