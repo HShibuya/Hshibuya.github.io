@@ -40,7 +40,7 @@
 
 				$functStr = "showDesc('".$pid."','".$name."','".$title."','".$desc."','".$date."','".$comment."')";
 
-				$html = '<div id="$pid" class="painting" onclick="'.$functStr.'">
+				$html = '<div id="'.$pid.'" class="painting" onclick="'.$functStr.'">
 					<p class="title">'.$title.'</p>
 					<img class= "drawing" src="../paintings/'.$pid.'.png">
 					<p class="name"><i>By: '.$name.'</i></p>
