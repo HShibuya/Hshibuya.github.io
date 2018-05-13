@@ -18,13 +18,13 @@ body{
     border: 1px solid #888;
 }
 .painting{
-	display: inline-block;
+	display:inline-block;
+	position: relative;
 	width:384px;
 	margin: 20px 10px;
-	border-style: ridge;
-	border-radius: 10px;
-	border-color: blue;
-	align-content: center;
+}
+.painting p{
+	text-align: center;
 }
 .drawing{
 	display:block;
@@ -49,14 +49,6 @@ body{
     height:100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
-}
-#zoom{
-    position: relative;
-    /*background-color: azure;*/
-    margin: 10% auto 10% auto;
-    width: 80%;
-    border: 1px solid #888;
-    border-radius:25px;
 }
 #zoom{
     position: relative;
