@@ -54,7 +54,7 @@ body{
     border: 1px solid #888;
     border-radius:25px;
 }
-#zoom::after{
+#zoom::backdrop{
 	background-image: url(../images/wall_texture.jpg);
 	opacity: 0.5;
 	z-index: 2;
