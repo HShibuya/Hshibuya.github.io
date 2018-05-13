@@ -30,52 +30,52 @@
 		
 		<div id='gallery'>
 			<?php
-			function genDiv($row){
-				$pid = $row["pid"];
-				$name = $row["name"];
-				$title = $row["title"];
-				$desc = $row["descr"];
-				$date = $row["only_date"];
-				$comment = $row["comments"];
+				function genDiv($row){
+					$pid = $row["pid"];
+					$name = $row["name"];
+					$title = $row["title"];
+					$desc = $row["descr"];
+					$date = $row["only_date"];
+					$comment = $row["comments"];
 
-				$functStr = "showDesc('".$pid."','".$name."','".$title."','".$desc."','".$date."','".$comment."')";
+					$functStr = "showDesc('".$pid."','".$name."','".$title."','".$desc."','".$date."','".$comment."')";
 
-				$html = '<div id="'.$pid.'" class="painting" onclick="'.$functStr.'">
-					<img class= "drawing" src="../paintings/'.$pid.'.png">
-					<p class="title" style="font-size:24px;">'.$title.'</p>
-					<p class="name" style="font-size:16px;"><i>By: '.$name.'</i></p>
-				</div>';
-				echo $html;
-			}
-
-			//$servername = 'localhost';
-			$servername = 'localhost';
-			$username = 'id3110622_hshibuya96';
-			$password = 'boort7467';
-			$dbname = 'id3110622_paintings';
-
-			$connection = new mysqli($servername, $username, $password, $dbname);
-			//$connection = new mysqli($servername);
-
-			if ($connection->connect_error) {
-				echo("<script>console.log('Connection failed: ".$connection->connect_error."')</script>");
-			} 
-			else{
-				echo("<script>console.log('Connection successful')</script>");
-			}
-
-			$sql = 'SELECT paintings.pid, name, title, descr, DATE(pdate) AS only_date, comments FROM paintings INNER JOIN approved ON paintings.pid=approved.pid ORDER BY pdate';
-			$results = $connection->query($sql);
-			if ($results->num_rows > 0) {
-				echo("<script>console.log('Query successful')</script>");
-				// output data of each row
-				while($row = $results->fetch_assoc()) {
-					genDiv($row);
+					$html = '<div id="'.$pid.'" class="painting" onclick="'.$functStr.'">
+						<img class= "drawing" src="../paintings/'.$pid.'.png">
+						<p class="title" style="font-size:24px;">'.$title.'</p>
+						<p class="name" style="font-size:16px;"><i>By: '.$name.'</i></p>
+					</div>';
+					echo $html;
 				}
-			}
-			else{
-				echo '<script>console.log("Error: '.$sql.'");console.log("'.$connection->error.'")</script>;';
-			}
+
+				//$servername = 'localhost';
+				$servername = 'localhost';
+				$username = 'id3110622_hshibuya96';
+				$password = 'boort7467';
+				$dbname = 'id3110622_paintings';
+
+				$connection = new mysqli($servername, $username, $password, $dbname);
+				//$connection = new mysqli($servername);
+
+				if ($connection->connect_error) {
+					echo("<script>console.log('Connection failed: ".$connection->connect_error."')</script>");
+				} 
+				else{
+					echo("<script>console.log('Connection successful')</script>");
+				}
+
+				$sql = 'SELECT paintings.pid, name, title, descr, DATE(pdate) AS only_date, comments FROM paintings INNER JOIN approved ON paintings.pid=approved.pid ORDER BY pdate';
+				$results = $connection->query($sql);
+				if ($results->num_rows > 0) {
+					echo("<script>console.log('Query successful')</script>");
+					// output data of each row
+					while($row = $results->fetch_assoc()) {
+						genDiv($row);
+					}
+				}
+				else{
+					echo '<script>console.log("Error: '.$sql.'");console.log("'.$connection->error.'")</script>;';
+				}
 
 
 			?>
