@@ -48,7 +48,7 @@ body{
 }
 #zoom{
     position: relative;
-    background-color: azure;
+    /*background-color: azure;*/
     margin: 10% auto 10% auto;
     width: 80%;
     border: 1px solid #888;
@@ -57,7 +57,7 @@ body{
 #zoom::after{
 	background-image: url(../images/wall_texture.jpg);
 	opacity: 0.5;
-	z-index: 1;
+	z-index: 2;
 }
 .close{
     display:block;

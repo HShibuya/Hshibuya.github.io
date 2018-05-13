@@ -50,15 +50,43 @@ $dbname = 'id3110622_paintings';
 
 $connection = new mysqli($servername, $username, $password, $dbname);
 
+
 if ($connection->connect_error) {
 	echo("Connection failed: ".$connection->connect_error."\n");
 };
 
+
 $sql = "INSERT INTO paintings (pid, name, secret, title, descr, pdate) VALUES ('$fileHash', '$name', '$secret', '$title','$desc', CURRENT_TIMESTAMP)";
+
+/*
+try{
+	$connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+	$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	
+	try{
+		$connection->exec($sql);
+		echo "New record created successfully";
+	}
+	catch(PDOException $e){
+		echo "No record created: ".$e->getMessage();
+	}
+}
+catch(PDOException $e){
+	echo "Connection failed: ".$e->getMessage();
+}
+*/
+
+
+
+//MySqli
 
 if ($connection->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
     echo "Error: ".$sql."<br>".$connection->error;
 }
+
+
+
 
