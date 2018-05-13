@@ -19,11 +19,11 @@
 						<p id='dateUp'></p>
 					</div>
 				</div>
-				<div id='descContainer' class="container">
+				<div id='descContainer'>
 					<label for='desc'>A Little Bit About This Piece:</label>
-					<p id='desc'></p>
+					<p id='desc' class="desc"></p>
 					<label for='comments'>My Comments!</label>
-					<p id='comments'></p>
+					<p id='comments' class='desc'></p>
 				</div>
 			</div>
 		</div>
@@ -91,10 +91,9 @@
 					$('#imageUp').attr('src','../paintings/'+pid+'.png');
 					$('#titleUp').html(title);
 					$('#nameUp').html('<i>By: '+name+'</i>');
-					$('#desc').html(descr);
-					$('#comments').html(comment);
+					$('#desc').html('<i>'+descr+'</i>');
+					$('#comments').html('<i>'+comment+'</i>');
 					$('#dateUp').html(date);
-				}
 			</script>
 			
 		</div>

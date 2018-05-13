@@ -35,6 +35,7 @@ body{
     border-color:chocolate;
     border-style: groove;
     border-width: 5px;
+    box-shadow: 2px 2px 1px grey;
 }
 
 
@@ -79,12 +80,12 @@ body{
     border-color:chocolate;
     border-style: groove;
     border-width: 5px;
+    box-shadow: 2px 2px 1px grey;
 }
 .plaque{
 	position: relative;
 	margin: 30px auto 10px auto;
 	box-sizing: border-box;
-	min-width: 70%;
 	width: 70%;
 	background: #F5F5F5;
 	border-color: #BEBEBE;
@@ -92,11 +93,13 @@ body{
 	border-width: 1px;
 	padding: 20px;
 	box-shadow: 2px 2px 1px grey;
+	max-width:450px;
 }
 #artistContainer{
 	display: flex;
 	margin: 20px auto 0px auto;
 	justify-content: space-between;
+	font-family: helvetica;
 }
 #titleUp{
 	position: relative;
@@ -118,9 +121,23 @@ body{
 	right: 0px;
 	text-align: right;
 }
-#date{
-	left: 25px;
-	right: 0px;
+#descContainer{
+	position: relative;
+	box-sizing: border-box;
+	margin: 0px auto 30px auto;
+	width:70%;
+	background: #F5F5F5;
+	border-color: #BEBEBE;
+	border-style: outset;
+	border-width: 1px;
+	padding: 20px;
+	box-shadow: 2px 2px 1px grey;
+}
+#descContainer p{
+	margin: 0px auto 10px auto;
+	font-size:14px;
+	font-family: helvetica;
+	padding: 5px;
 }
 
 

@@ -34,7 +34,7 @@ $imgData = substr($imgData,strpos($imgData,",")+1);
 $imgData = str_replace(' ', '+', $imgData);
 $img = base64_decode($imgData);
 
-$fileData = ''.$file_count.$date.$name.$secret.$title;
+$fileData = ''.$file_count.$name.$secret.$title;
 
 $fileHash = hash('sha256', $fileData);
 $filename = $img_dir.'/'.$fileHash.'.png';
