@@ -94,6 +94,7 @@
 					$('#desc').html('<i>'+descr+'</i>');
 					$('#comments').html('<i>'+comment+'</i>');
 					$('#dateUp').html(date);
+				}
 			</script>
 			
 		</div>
